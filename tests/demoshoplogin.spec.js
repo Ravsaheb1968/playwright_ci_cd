@@ -4,7 +4,11 @@ import {test} from "../testfixtures/fixtures.js";
 
 import {getExcelData} from "../utilities/exceldata.js";
 
-const testData = getExcelData("../testdata/PlaywrightData.xlsx","Data");
+import path from "path";
+
+const filePath = path.resolve("testdata/PlaywrightData.xlsx");
+
+const testData = getExcelData(filePath, "Data");
 
 test("Demoshop Login Page", async({loginPage})=>{
 
