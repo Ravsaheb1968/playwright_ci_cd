@@ -34,7 +34,7 @@ jobs:
         name: playwright-report
         path: playwright-report
 
-    - name: Upload Test Results (JUnit)
+    - name: Upload Test Results (junit)
       uses: actions/upload-artifact@v4
       with:
         name: junit-results
