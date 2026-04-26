@@ -8,7 +8,7 @@ import path from "path";
 
 const filePath = path.resolve("testdata/Playwright_Data.xlsx");
 
-const testData = getExcelData(filePath, "Data");
+const testData = getExcelData(filePath, "Users");
 
 test("Demoshop Login Page", async({loginPage})=>{
 
