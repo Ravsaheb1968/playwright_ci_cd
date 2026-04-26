@@ -18,12 +18,11 @@ test.describe.parallel("Register User", async () => {
 
             let i = +1;
             await registerPage.navigate();
-            console.log("The name of the user is " + testData[0].FirstName);
-            await registerPage.RegisterUser(testData[0].Gender, testData[0].FirstName, testData[0].LastName, testData[0].Email, testData[0].Password, testData[0].ConfirmPassword);
+            console.log("The name of the user is " + user.Email);
+            await registerPage.RegisterUser(user.Gender,user.FirstName, user.LastName, user.Email, user.Password, user.ConfirmPassword);
             if (i == 10) {
-                page.close();
-                break;
-
+                page.pause();
+                
             }
         })
     })
