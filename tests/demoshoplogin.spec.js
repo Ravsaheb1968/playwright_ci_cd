@@ -14,4 +14,5 @@ test("Demoshop Login Page", async({loginPage})=>{
 
     await loginPage.navigate();
     await loginPage.login(testData[0].Email, testData[0].Password);
+    
 })

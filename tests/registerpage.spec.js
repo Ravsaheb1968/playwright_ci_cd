@@ -11,5 +11,6 @@ const testData = getExcelData(filePath, "Users");
 
 test("Register the User", async({registerPage})=>{
     await registerPage.navigate();
-    await registerPage.RegisterPage(testData[0].Email, testData[0].Password,testData[0].ConfirmPassword, testData[0].Firstname,testData[0].Lastname,testData[0].Gender);
+    console.log("The name of the user is " + testData[0].FirstName);
+    await registerPage.RegisterUser(testData[0].Email, testData[0].Password,testData[0].ConfirmPassword, testData[0].FirstName,testData[0].LastName);
 })
