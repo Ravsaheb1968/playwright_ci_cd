@@ -10,15 +10,15 @@ export class Basepage{
         await this.page.goto("https://demowebshop.tricentis.com/");
     }
     
-    async click(locator){
-        await this.click(locator);
-    }
+    // async click(locator){
+    //     await this.click(locator);
+    // }
 
-    async fill(locator, value){
-        await this.fill(locator, value);
-    }
+    // async fill(locator, value){
+    //     await this.fill(locator, value);
+    // }
 
-    async verifyloginSuccessfull(){
-        await expect(this.page).toHaveURL("/account");
-    }
+    // async verifyloginSuccessfull(){
+    //     await expect(this.page).toHaveURL("/account");
+    // }
 }

@@ -6,7 +6,7 @@ import {getExcelData} from "../utilities/exceldata.js";
 
 import path from "path";
 
-const filePath = path.resolve("testdata/PlaywrightData.xlsx");
+const filePath = path.resolve("testdata/Playwright_Data.xlsx");
 
 const testData = getExcelData(filePath, "Data");
 
