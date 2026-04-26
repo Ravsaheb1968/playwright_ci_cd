@@ -1,5 +1,5 @@
 import {LoginPage} from "../pages/loginpage.js";
-import {RegisterPage} from "..pages/registerpage.js";
+import {RegisterPage} from "../pages/registerpage.js";
 import {test as base} from "@playwright/test";
 
 export const test = base.extend({
