@@ -1,24 +1,37 @@
-import {expect} from "@playwright/test";
+import { expect } from "@playwright/test";
 
-export class Basepage{
+export class Basepage {
 
-    constructor(page){
-        this.page=page;
+    constructor(page) {
+        this.page = page;
     }
 
-    async navigate(){
+    async navigate() {
         await this.page.goto("https://demowebshop.tricentis.com/");
     }
-    
-    // async click(locator){
-    //     await this.click(locator);
-    // }
 
-    // async fill(locator, value){
-    //     await this.fill(locator, value);
-    // }
+    async getPageTitle() {
+        return await this.page.getTitle();
+    }
 
-    // async verifyloginSuccessfull(){
-    //     await expect(this.page).toHaveURL("/account");
-    // }
+    async click(locator) {
+        return await locator.click();
+    }
+
+    async fill(locator, value) {
+        await locator.fill(value);
+    }
+
+    // 👁 Wait for visibility
+    async waitForVisible(locator) {
+        await locator.waitFor({ state: 'visible' });
+    }
+
+    async getText(locator){
+        return await locator.textContext();
+    }
+
+    async takeScreenshot(name = 'screenshot'){
+        await this.page.screenshot({path:`screenshots/${name}.png`});
+    }
 }

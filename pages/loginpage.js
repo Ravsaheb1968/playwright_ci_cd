@@ -15,10 +15,12 @@ export class LoginPage extends Basepage {
     
     async login(Email, pass) {
 
-       await this.loginlink.click();
-       await this.username.fill(Email);
-       await this.password.fill(pass);
-       await this.loginbtn.click();
+        // Here is this used manadatory to access the varible of the Loginpag class itself 
+        // without using this not able to find the or its undefined variable.
+       await this.click(this.loginlink);
+       await this.fill(this.username,Email);
+       await this.fill(this.password, pass);
+       await this.click(this.loginbtn);
     }
 
 }

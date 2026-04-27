@@ -18,14 +18,22 @@ export class RegisterPage extends Basepage{
     }
 
     async RegisterUser(Gender,FirstName,LastName,Email,Password,ConfirmPassword){
+
+        await this.click(this.Registerlink);
+        await this.click(this.Gender);
+        await this.fill(this.Firstname, FirstName);
+        await this.fill(this.Lastname,LastName);
+        await this.fill(this.Email, Email);
+        await this.fill(this.Password, Password);
+        await this.fill(this.ConfirmPass,ConfirmPassword);
         
-        await this.Registerlink.click();
-        await this.Gender.click();
-        await this.Firstname.fill(FirstName);
-        await this.Lastname.fill(LastName);
-        await this.Email.fill(Email);
-        await this.Password.fill(Password);
-        await this.ConfirmPass.fill(ConfirmPassword);
+        // await this.Registerlink.click();
+        // await this.Gender.click();
+        // await this.Firstname.fill(FirstName);
+        // await this.Lastname.fill(LastName);
+        // await this.Email.fill(Email);
+        // await this.Password.fill(Password);
+        // await this.ConfirmPass.fill(ConfirmPassword);
         
     }
 }
