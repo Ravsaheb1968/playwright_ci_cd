@@ -34,6 +34,10 @@ export class Basepage {
     async select(locator, value){
         await locator.selectOption(value);
     }
+
+    async checkboxSelect(locator){
+        await locator.check();
+    }
     async takeScreenshot(name = 'screenshot'){
         await this.page.screenshot({path:`screenshots/${name}.png`});
     }

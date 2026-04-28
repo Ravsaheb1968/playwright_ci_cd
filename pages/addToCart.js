@@ -8,11 +8,11 @@ export class AddToCart extends Basepage{
         this.bookslink = this.page.getByRole("link", {name:"Books"}).first();
         this.sortByFilter = this.page.locator("#products-orderby");
         // this.bookSelect = this.page.locator(".product-title");
-        this.bookSelect = this.page.getByRole('button', { name: 'Add to cart' }).first()
-        this.shoppingCartLink = this.page.getByText("/^Shopping cart/");
+        this.bookSelect = this.page.getByRole('button', { name: 'Add to cart' }).first();
+        this.shoppingCartLink = this.page.locator(".cart-label").first();
         this.verifyBooksAddToCart = this.page.getByRole("link", {name:"Computing and Internet"});
-        this.removeCartCheckbox = this.page.getByRole("checkbox", {name:"removefromcart"});
-        this.updateCartbtn = this.page.getByRole("button", {name:"updatecart"});
+        this.removeCartCheckbox = this.page.locator('input[name="removefromcart"]');
+        this.updateCartbtn = this.page.getByRole('button', { name: 'Update shopping cart' })
         this.checkRemoveCart = this.page.getByText("Your Shopping Cart is empty!");
 
     }
@@ -25,8 +25,8 @@ export class AddToCart extends Basepage{
 
         await this.click(this.bookSelect);
         await this.click(this.shoppingCartLink);
-        await this.waitForVisible(this.verifyBooksAddToCart);
-        await this.click(this.removeCartCheckbox);
+        // await this.waitForVisible(this.verifyBooksAddToCart);
+        await this.checkboxSelect(this.removeCartCheckbox);
         await this.click(this.updateCartbtn);
         await this.waitForVisible(this.checkRemoveCart);
     }
