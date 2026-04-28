@@ -15,7 +15,7 @@ export class Basepage {
     }
 
     async click(locator) {
-        return await locator.click();
+        await locator.click();
     }
 
     async fill(locator, value) {
@@ -31,7 +31,11 @@ export class Basepage {
         return await locator.textContext();
     }
 
+    async select(locator, value){
+        await locator.selectOption(value);
+    }
     async takeScreenshot(name = 'screenshot'){
         await this.page.screenshot({path:`screenshots/${name}.png`});
     }
+
 }
