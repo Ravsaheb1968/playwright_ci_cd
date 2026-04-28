@@ -7,8 +7,9 @@ export class AddToCart extends Basepage{
 
         this.bookslink = this.page.getByRole("link", {name:"Books"}).first();
         this.sortByFilter = this.page.locator("#products-orderby");
-        this.bookSelect = this.page.locator(".product-title");
-        this.shoppingCartLink = this.page.getByText("Shopping cart");
+        // this.bookSelect = this.page.locator(".product-title");
+        this.bookSelect = this.page.getByRole('button', { name: 'Add to cart' }).first()
+        this.shoppingCartLink = this.page.getByText("/^Shopping cart/");
         this.verifyBooksAddToCart = this.page.getByRole("link", {name:"Computing and Internet"});
         this.removeCartCheckbox = this.page.getByRole("checkbox", {name:"removefromcart"});
         this.updateCartbtn = this.page.getByRole("button", {name:"updatecart"});
@@ -16,17 +17,18 @@ export class AddToCart extends Basepage{
 
     }
 
-    
     async AddToCart(){
+
         await this.click(this.bookslink);
         await this.select(this.sortByFilter, "Name: A to Z");
-        await this.bookSelect.filter({has: this.page.getByRole("link",{name:"Computing and Internet"})},{hastText:"Add to cart"});
+        // await this.bookSelect.filter({has: this.page.getByRole("link",{name:"Computing and Internet"})},{hastText:"Add to cart"});
+
+        await this.click(this.bookSelect);
         await this.click(this.shoppingCartLink);
         await this.waitForVisible(this.verifyBooksAddToCart);
         await this.click(this.removeCartCheckbox);
         await this.click(this.updateCartbtn);
         await this.waitForVisible(this.checkRemoveCart);
     }
-
 
 }

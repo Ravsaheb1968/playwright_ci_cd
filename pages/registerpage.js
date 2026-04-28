@@ -14,7 +14,7 @@ export class RegisterPage extends Basepage {
         this.ConfirmPass = this.page.locator("#ConfirmPassword");
 
         // click on the Register button
-        this.Registerbtn = this.page.getByRole("textbox", { name: "register-button" });
+        this.Registerbtn = this.page.locator("#register-button");
 
     }
 
